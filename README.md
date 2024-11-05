@@ -16,3 +16,5 @@ Please follow the instructions outlined below.
 - Please conform to Accessibility best practices
 
 We've included an image with an example to use as a reference, feel free to style this page and its elements in your own way.
+
+![image](https://github.com/user-attachments/assets/94ec5e88-bc84-4760-9af3-4121638e9a82)
