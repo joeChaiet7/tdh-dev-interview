@@ -20,8 +20,8 @@ h1 {
 }
 
 .card {
-    background-color: #ffffff;
-    border: 1px solid #ccc;
+    background-color: #fff;
+    border: 2px solid #8e88e1;
     border-radius: 8px;
     padding: 20px;
     width: 200px;
@@ -32,7 +32,7 @@ h1 {
 
 
 .card.active {
-    background-color: #dfc9ee;
+    background-color: #e0d1ea;
 }
 
 button {
