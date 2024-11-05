@@ -1,1 +1,67 @@
-/* Add you styles here */
+body {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 40px;
+    color: #880db1
+}
+
+
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: 200px;
+    transition: background-color 0.3s;
+    height: fit-content;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.card.active {
+    background-color: #dfc9ee;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #a12fc7;
+    color: white;
+
+}
+
+.body-text {
+    display: none;
+}
+
+.body-text.show {
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 100%;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+    .card {
+        width: 45%;
+    }
+}
