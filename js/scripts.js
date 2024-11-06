@@ -14,6 +14,8 @@ buttons.forEach(button => {
         // Match the id selected with the description id
         let description = document.getElementById(`card__description--${buttonIdNumber}`)
 
+        let card = document.getElementById(`card-${buttonIdNumber}`)
+
         // If the description id exist..
         if (description) {
             description.classList.toggle('hidden');
@@ -21,6 +23,13 @@ buttons.forEach(button => {
             // Update aria-hidden based on the visibility of the description
             const isDescriptionHidden = description.classList.contains('hidden');
             description.setAttribute('aria-hidden', isDescriptionHidden ? 'true' : 'false');
+
+            // Change the background color of the card based on description visibility
+            if (isDescriptionHidden) {
+                card.style.backgroundColor = 'white';
+            } else {
+                card.style.backgroundColor = 'aliceblue';
+            }
 
             // Update button text depending on visibility of the description
             event.target.textContent = description.classList.contains('hidden') ? "Show Text" : "Hide Text";
