@@ -1,1 +1,113 @@
-/* Add you styles here */
+/* Styles */
+* {
+    margin: 0;
+    box-sizing: border-box;
+    color: rgb(62, 37, 80);
+}
+
+.main {
+    max-width: 1280px;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.title {
+    font-size: 3rem;
+    text-align: center;
+    position: fixed;
+    top: 25%;
+}
+
+.cards-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    gap: 2rem;
+    padding: 0 1rem 0 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    padding: 2rem;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+}
+
+.title, 
+.card__header {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.card__header,
+.card__description,
+.card__footer {
+    margin-bottom: 1rem;
+}
+
+.card__description {
+    font-size: large;
+}
+
+.card__footer {
+    margin-bottom: 0;
+}
+
+.card__button {
+    color: white;
+    padding: 0.5rem 4rem;
+    border-radius: 2rem;
+    border: none;
+    background-color: #6658ea;
+    font-size: medium;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Transitions */
+.card__button:hover {
+    background-color: #5145ba;
+}
+
+
+/* Media Queries */
+
+@media (width < 425px) {
+    .title {
+        top: 7%;
+    }
+}
+
+@media (width < 768px) {
+    .cards-section {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (425px <= width <= 768px) {
+    .cards-section {
+        gap: 1.5rem;
+    }
+
+    .title {
+        top: 10%;
+    }
+}
