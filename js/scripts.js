@@ -1,20 +1,19 @@
-
-const buttons = document.querySelectorAll('.card-button');
-
-buttons.forEach(button => {
-  button.addEventListener('click', function() {
-    const card = this.closest('.card');
-
-    card.classList.toggle('closed');
-
+document.querySelectorAll('.card-button').forEach(button => {
+  button.addEventListener('click', () => {
+    const card = button.closest('.card');
     const cardBody = card.querySelector('.card-body');
+    const isExpanded = button.getAttribute('aria-expanded') === 'true';
 
-    if (card.classList.contains('closed')) {
-      cardBody.style.display = 'none';
-      this.textContent = 'Show Text';
+    cardBody.style.display = isExpanded ? 'none' : 'block';
+
+    button.setAttribute('aria-expanded', !isExpanded);
+
+    button.textContent = isExpanded ? 'Show Text' : 'Hide Text';
+
+    if (isExpanded) {
+      card.classList.add('closed');
     } else {
-      cardBody.style.display = 'block';
-      this.textContent = 'Hide Text';
-    }
-  });
+      card.classList.remove('closed');
+    }
+  });
 });
