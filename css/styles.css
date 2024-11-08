@@ -45,13 +45,26 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: white;
+    transition: background-color 0.5s ease;
+}
+.cardBox.active {
+    background-color: aliceblue;
 }
 .text {
-    display: none;
     font-size: var(--fontSize-text);
     letter-spacing: 0.02rem;
     line-height: 1.4;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    transition: opacity 0.5s ease-in-out, height 1s ease-in-out;
+}
+.text.active {
     margin-top: 15px;
+    opacity: 1;
+    visibility: visible;
+    height: auto; 
 }
 h1 {
     font-family: recklessNeue;
@@ -75,10 +88,6 @@ h2 {
     font-size: var(--fontSize-text);
     background: var(--color-indigo);
 }
-.button:hover {
-    background: var(--color-purple);
-    cursor: pointer;
-}
 
 @media(min-width: 639px){
     
@@ -95,7 +104,8 @@ h2 {
         border-radius: 30px;
         margin-top: 25px;
     }
-    .text {
+    
+    .text.active {
         margin-top: 25px;
     }
 }
@@ -109,6 +119,13 @@ h2 {
         padding: 65px;
         margin: 4% auto;
     }
+    .button {
+        transition: background 0.5s ease-in-out;
+    }
+    .button:hover {
+        background: var(--color-purple);
+        cursor: pointer;
+    }
 }
 
 @media(min-width: 1259px){
@@ -117,7 +134,7 @@ h2 {
         width: 85%;
     }  
     :root {
-        --fontSize-title: clamp(32px, 4.5vw, 65px);
+        --fontSize-title: clamp(50px, 4.5vw, 65px);
         --fontSize-subtitles: clamp(24px, 2.5vw, 35px);
         --fontSize-text: clamp(14px, 1.35vw, 18px);
     }
@@ -138,7 +155,8 @@ h2 {
         padding: 2% 20%;
         margin-top: 25px;
     }
-    .text {
+    
+    .text.active {
         margin-top: 20px;
     }
 }
@@ -156,14 +174,14 @@ h2 {
         margin: 2em;
     }
     :root {
-        --fontSize-title: clamp(32px, 4.5vw, 70px);
-        --fontSize-subtitles: clamp(24px, 2vw, 40px);
-        --fontSize-text: clamp(14px, 1.35vw, 22px);
+        --fontSize-title: clamp(50px, 4.5vw, 70px);
+        --fontSize-subtitles: clamp(30px, 2vw, 40px);
+        --fontSize-text: 22px;
     }
     .cardBox {
         padding: 45px;
     }
-    .text {
+    .text.active {
         margin-top: 25px;
     }
     .button {
