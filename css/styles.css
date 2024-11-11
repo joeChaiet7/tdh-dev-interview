@@ -7,6 +7,7 @@
 body {
     font-family: effra;
     min-height: 100vh;
+    min-width: 320px;
     color: var(--color-blue);
 }
   
@@ -19,7 +20,7 @@ body {
     --color-indigo: #6610f2;
     --color-purple: #6f42c1;
 
-    --fontSize-title: clamp(32px, 7.2vw, 75px);
+    --fontSize-title: clamp(31px, 7.2vw, 75px);
     --fontSize-subtitles: clamp(24px, 5vw, 45px);
     --fontSize-text: clamp(14px, 3.8vw, 26px);
 }
