@@ -1,1 +1,191 @@
-/* Add you styles here */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: effra;
+    min-height: 100vh;
+    min-width: 320px;
+    color: var(--color-blue);
+}
+  
+#app {
+    width: 90%;
+    margin: auto;
+}  
+:root {
+    --color-blue: #073460;
+    --color-indigo: #6610f2;
+    --color-purple: #6f42c1;
+
+    --fontSize-title: clamp(31px, 7.2vw, 75px);
+    --fontSize-subtitles: clamp(24px, 5vw, 45px);
+    --fontSize-text: clamp(14px, 3.8vw, 26px);
+}
+@font-face {
+    font-family: recklessNeue;
+    src: url('/tdh-dev-interview/RecklessNeue-Bold.woff');
+}
+
+@font-face {
+    font-family: effra;
+    src: url('/tdh-dev-interview/Effra.woff');
+}
+.cardBoxesSection {
+    display: flex;
+    flex-direction: column;
+}
+.cardBox {
+    border-radius: 25px;
+    padding: 25px;
+    width: 80%;
+    margin: 5% auto;
+    box-shadow: 0 0 20px rgb(0 0 0 / 12%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    transition: background-color 0.5s ease;
+}
+.cardBox.active {
+    background-color: aliceblue;
+}
+.text {
+    font-size: var(--fontSize-text);
+    letter-spacing: 0.02rem;
+    line-height: 1.4;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    transition: opacity 0.5s ease-in-out, height 1s ease-in-out;
+}
+.text.active {
+    margin-top: 15px;
+    opacity: 1;
+    visibility: visible;
+    height: auto; 
+}
+h1 {
+    font-family: recklessNeue;
+    text-align: center;
+    margin: 1em;
+    font-size: var(--fontSize-title);
+}
+h2 {
+    text-align: center;
+    font-size: var(--fontSize-subtitles);
+    font-family: recklessNeue;
+}
+.button {
+    border-radius: 30px;
+    margin-top: 15px;
+    padding: 3% 15%;
+    line-height: 1.5;
+    color: white;
+    border: none;
+    font-family: effra;
+    font-size: var(--fontSize-text);
+    background: var(--color-indigo);
+}
+
+@media(min-width: 639px){
+    
+    #app {
+        width: 80%;
+    }  
+    
+    .cardBox {
+        border-radius: 35px;
+        padding: 38px;
+        margin: 6% auto;
+    }
+    .button {
+        border-radius: 30px;
+        margin-top: 25px;
+    }
+    
+    .text.active {
+        margin-top: 25px;
+    }
+}
+@media(min-width: 1023px){
+    
+    #app {
+        width: 70%;
+    }
+    .cardBox {
+        border-radius: 35px;
+        padding: 65px;
+        margin: 4% auto;
+    }
+    .button {
+        transition: background 0.5s ease-in-out;
+    }
+    .button:hover {
+        background: var(--color-purple);
+        cursor: pointer;
+    }
+}
+
+@media(min-width: 1259px){
+    
+    #app {
+        width: 85%;
+    }  
+    :root {
+        --fontSize-title: clamp(50px, 4.5vw, 65px);
+        --fontSize-subtitles: clamp(24px, 2.5vw, 35px);
+        --fontSize-text: clamp(14px, 1.35vw, 18px);
+    }
+    .cardBoxesSection {
+        flex-direction: row;
+        align-items: center;
+        height: 330px;
+        justify-content: space-between;
+    }
+    .cardBox {
+        border-radius: 35px;
+        padding: 35px;
+        margin: 0;
+        width: 30.5%;
+    }
+    .button {
+        border-radius: 30px;
+        padding: 2% 20%;
+        margin-top: 25px;
+    }
+    
+    .text.active {
+        margin-top: 20px;
+    }
+}
+@media (min-width: 1439px) {
+    #app {
+        width: 80%;
+    }
+    
+}
+@media (min-width: 1700px) {
+    #app {
+        width: 80%;
+    }
+    h1 {
+        margin: 2em;
+    }
+    :root {
+        --fontSize-title: clamp(50px, 4.5vw, 70px);
+        --fontSize-subtitles: clamp(30px, 2vw, 40px);
+        --fontSize-text: 22px;
+    }
+    .cardBox {
+        padding: 45px;
+    }
+    .text.active {
+        margin-top: 25px;
+    }
+    .button {
+        margin-top: 30px;
+    }
+}
